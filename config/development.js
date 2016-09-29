@@ -1,5 +1,10 @@
-exports.koa = require('koa');
-exports.bodyParser = require('koa-bodyparser');
-exports.logger = require('koa-logger');
-exports.router = require('koa-router');
-exports.Mongoose = require('mongoose');
+'use strict';
+require('config/base');
+
+deps.App = deps.Koa();
+deps['@router'] = deps.Router();
+deps.App
+  .use(deps['BodyParser']())
+  .use(deps['Logger']())
+  .use(deps['@router'].routes())
+  .use(deps['@router'].allowedMethods());
