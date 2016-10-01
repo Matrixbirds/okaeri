@@ -1,0 +1,6 @@
+{
+  "name": "string",
+  "encryptedPassword": "string",
+  "createdAt": "string",
+  "updatedAt": "string"
+}

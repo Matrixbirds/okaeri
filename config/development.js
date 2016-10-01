@@ -1,10 +1,10 @@
 'use strict';
 require('config/base');
 
-deps.App = deps.Koa();
-deps['@router'] = deps.Router();
-deps.App
+deps.app = deps.Koa();
+deps.router = deps.Router();
+deps.app
   .use(deps['BodyParser']())
   .use(deps['Logger']())
-  .use(deps['@router'].routes())
-  .use(deps['@router'].allowedMethods());
+  .use(deps.router.routes())
+  .use(deps.router.allowedMethods());
