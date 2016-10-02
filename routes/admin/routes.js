@@ -14,3 +14,12 @@ exports["articles"]
   .post('/articles', exports["articles"].create)
   .put('/articles/:id', exports["articles"].update)
   .del('/articles/:id', exports["articles"].destroy);
+
+exports['users']
+  .router
+  .get('/users', exports['users'].index)
+  .get('/users/:id', exports['users'].show)
+  .get('/users/new', exports['users'].new)
+  .post('/users', exports['users'].create)
+  .put('/users/:id', exports['users'].update)
+  .del('/users/:id', exports['users'].destroy);

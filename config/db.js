@@ -1,4 +1,6 @@
+'use strict';
 const Mongoose = require('mongoose');
+Mongoose.Promise = global.Promise;
 const URI = 'mongodb://localhost/okaeri-development';
 const CONFIG = {
   server: {

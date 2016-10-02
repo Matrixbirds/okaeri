@@ -1,6 +1,33 @@
-{{#each articles}}
- <p>
-   <a href="/articles/{{_id}}">{{title}}</a>
-   <span>{{content}}</span>
- </p>
-{{/each}}
+<div class='articles table table-border'>
+  <div class='row'>
+    <div class='cell'>
+    Id
+    </div>
+    <div class='cell'>
+    Title
+    </div>
+    <div class='cell'>
+    CreatedAt
+    </div>
+    <div class='cell'>
+    UpdatedAt
+    </div>
+  </div>
+  {{#each articles}}
+  <div class='row'>
+    <div class='cell'>
+      <a href="/articles/{{_id}}">{{_id}}</a>
+    </div>
+    <div class='cell'>
+      <span>{{title}}</span>
+    </div>
+    <div class='cell'>
+      <span>{{createdAt}}</span>
+    </div>
+    <div class='cell'>
+      <span>{{updatedAt}}</span>
+    </div>
+  </div>
+  {{else}}
+  {{/each}}
+</div>

@@ -1,0 +1,56 @@
+* {
+  font-size: 18px;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-header {
+  height: 3em;
+  width: 100%;
+  background-color: #1e89e0;
+  margin-bottom: 20px;
+}
+
+.admin-header .main {
+  color: #fff;
+  left: 250px;
+  top: 25%;
+  color: #fff;
+  position: relative;
+  font-size: larger;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.table-border {
+  border: 1px solid #000;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  text-align: center;
+  display: table-cell;
+  padding: 0.5em 0;
+}
+
+.table-border > .row > .cell:not(:last-child) {
+  border-right: 1px solid #000;
+}
+
+.table-border > .row:not(:last-child) > .cell {
+  border-bottom: 1px solid #000;
+}

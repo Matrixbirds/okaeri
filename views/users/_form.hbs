@@ -1,0 +1,21 @@
+<div>
+  {{#each user.errors}}
+    {{@key}}: {{this}}
+  {{else}}
+  {{/each}}
+</div>
+<form action="/users" method="POST">
+  <div class='row'>
+    <label>Name: </label>
+    <input type="text" name="user[name]" value="{{user.title}}">
+  </div>
+  <div class='row'>
+    <label>Password: </label>
+    <input type="text" name="user[password]">
+  </div>
+  <div class='row'>
+    <label>PasswordConfirmation: </label>
+    <input type="text" name="user[passwordConfirmation]">
+  </div>
+  <input type="submit" value="提交">
+</form>

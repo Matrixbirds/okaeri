@@ -1,4 +1,5 @@
 const Mongoose = require('mongoose');
+const ObjectId = Mongoose.Schema.ObjectId;
 const ArticleSchema = Mongoose.Schema({
   title: {
     type: String,
@@ -6,15 +7,16 @@ const ArticleSchema = Mongoose.Schema({
   },
   tags: {
     type: Array,
-  //  required: [true, 'Tags required']
+    required: [true, 'Tags required']
   },
   content: {
     type: String,
     required: [true, 'Content required']
   },
-  authorId: {
-    type: Number,
-   // required: [true, 'AuthorId required']
+  author: {
+    type: ObjectId,
+    ref: 'UserSchema',
+    required: [true, 'Author required']
   },
 },
 {

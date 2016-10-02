@@ -1,0 +1,20 @@
+<div class='users table table-border'>
+  <div class='row'>
+    <div class='cell'>
+    Id
+    </div>
+    <div class='cell'>
+    Name
+    </div>
+    <div class='cell'>
+    CreatedAt
+    </div>
+    <div class='cell'>
+    UpdatedAt
+    </div>
+  </div>
+  {{#each users}}
+  Id: {{user.id}} Name: {{user.name}}
+  {{else}}
+  {{/each}}
+</div>
