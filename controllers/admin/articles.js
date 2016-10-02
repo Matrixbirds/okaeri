@@ -1,15 +1,17 @@
-const mongoose = require('mongoose');
 const Article = require('models/article');
-const bluebird = require('bluebird');
 
 class Articles {
   static *index() {
     const articles = yield Article.find();
     this.status = 200;
-    this.body = { data: articles };
+    yield this.render('articles/index', { articles: articles });
   }
 
   static *show() {
+    const article = yield Article.findById(this.params['id']);
+    this.status = 200;
+    console.log(article);
+    yield this.render('articles/show', {  article: article });
   }
 
   static *destroy() {
@@ -18,7 +20,21 @@ class Articles {
   static *search() {
   }
 
+  static *new() {
+    yield this.render('articles/new');
+  }
+
   static *create() {
+    let article = new Article(this.request.body["article"]);
+    const result = yield article.save().catch((err) => false);
+    if (result) {
+      this.status = 201;
+      this.redirect(`articles/${article.id}`);
+    }
+    else {
+      this.status = 422;
+      yield this.render(`articles/new`, { article: article });
+    }
   }
 
   static *update() {

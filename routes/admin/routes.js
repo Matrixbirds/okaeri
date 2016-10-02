@@ -9,6 +9,8 @@ require('fs')
 exports["articles"]
   .router
   .get('/articles', exports["articles"].index)
+  .get('/articles/:id', exports["articles"].show)
+  .get('/articles/new', exports["articles"].new)
   .post('/articles', exports["articles"].create)
   .put('/articles/:id', exports["articles"].update)
   .del('/articles/:id', exports["articles"].destroy);
