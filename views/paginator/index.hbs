@@ -1,0 +1,14 @@
+{{#if page}}
+<div>
+  {{#if prevPage}}
+  <div>
+    <a href="?page={{prevPage}}&per={{per}}">prev</a>
+  </div>
+  {{/if}}
+  {{#if nextPage}}
+  <div>
+    <a href="?page={{nextPage}}&per={{per}}">next</a>
+  </div>
+  {{/if}}
+</div>
+{{/if}}
