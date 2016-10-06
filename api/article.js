@@ -1,8 +1,6 @@
 global.db = require('config/db');
 const Article = require('models/article');
-const seneca = require('seneca')();
-
-function ArticleSeneca() {
+module.exports = function ArticleApi() {
   const seneca = this;
   seneca.add('articles:paginator', (params, done) => {
     const {page = 1, per = 15} = params;
@@ -14,11 +12,7 @@ function ArticleSeneca() {
         done(null, {data: articles});
       })
       .catch((err) => {
-        done(null, {error: `${err}`});
+        done(null, {error: err});
       })
   });
 }
-
-seneca
-  .use(ArticleSeneca)
-  .listen({type: 'http', port: 2333, pin: 'users:index'});
